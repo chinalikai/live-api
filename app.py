@@ -1,5 +1,5 @@
 import os
-from flask import Flask, current_app, send_from_directory, request, Response
+from flask import Flask, send_from_directory, request, Response
 from flask_restful import reqparse, abort, Api, Resource
 
 app = Flask(__name__)
@@ -19,7 +19,7 @@ class LiveTest(Resource):
         print(picUrl)
         return {'name': "里斯哦is地", 'picid': picUrl}
 
-@app.route("/image/<string:picid>", methods=['get'])
+@app.route("/api/image/<string:picid>", methods=['get'])
 def index(picid):
     # path = request.args.get('path')
     # print(path)
@@ -28,8 +28,14 @@ def index(picid):
     resp = Response(open(path, 'rb'), mimetype="image/jpeg")
     return resp
 
+@app.route('/api/rec_message', methods=['GET', 'POST'])
+def get_message(uuid):
+    content = request.json
+    print(content['mytext'])
+    # return jsonify({"uuid":uuid})
 
-
+@app.route("/image/<string:picid>", methods=['get'])
+def index(picid):
 
 ##
 ## Actually setup the Api resource routing here
