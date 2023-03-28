@@ -1,0 +1,53 @@
+
+接口类型:POST 
+请求类型 Content-Type:application/json
+POST 数据：
+public DateTime Timestamp { get; set; }//时间
+public string UserNick { get; set; }//昵称
+public string UserSex { get; set; }性别
+public long UserV5Leve { get; set; }//蓝V等级
+public long UserFans { get; set; }//粉丝数
+public long UserFollows { get; set; }//关注数
+public string UserDisplayId //抖音号
+public long UserId { get; set; }//UserId 
+public string SecUid { get; set; }//SecUid 
+public string Msg { get; set; } //弹幕内容
+public string GiftUrl { get; set; }//礼物图片URL
+public int GiftCount { get; set; }//礼物数量
+public string GiftName { get; set; }//礼物名
+public long UserConsumeInRoom { get; set; }//用户房间消费
+public string UserHeadPic { get; set; } //用户头像URL地址
+public DanmuType Type { get; set; }//弹幕类型
+       
+ switch (Type)//弹幕类型定义
+{
+    case DanmuType.Gift:
+        return "礼物";
+    case DanmuType.EnterRoom:
+        return "进入房间";
+    case DanmuType.Like:
+        return "点赞";
+    case DanmuType.Follow:
+        return "关注";
+    case DanmuType.App:
+        return "系统";
+    case DanmuType.Fake:
+        return "虚拟弹幕";
+    default:
+        return "聊天";
+}
+  
+
+
+//弹幕类型 枚举
+ public enum DanmuType
+    {
+
+        Chat = 0,
+        Gift = 1,
+        Like = 2,
+        EnterRoom = 3,
+        Follow = 4,
+        App = 5,
+        Fake = 6
+    }
