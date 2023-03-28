@@ -29,14 +29,11 @@ def index(picid):
     return resp
 
 @app.route('/api/rec_message', methods=['GET', 'POST'])
-def get_message(uuid):
+def get_message():
     content = request.json
-    print(content['mytext'])
+    print(content)
     # return jsonify({"uuid":uuid})
-
-@app.route("/image/<string:picid>", methods=['get'])
-def index(picid):
-
+    return ''
 ##
 ## Actually setup the Api resource routing here
 ##
@@ -44,4 +41,4 @@ def index(picid):
 api.add_resource(LiveTest, '/live_test')
 
 if __name__ == '__main__':
-    app.run(host="127.0.0.221", port=9320, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
