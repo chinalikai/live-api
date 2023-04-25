@@ -46,3 +46,6 @@ zipp=3.15.0=pypi_0
 zlib=1.2.13=h4dc903c_0
 zope-event=4.6=pypi_0
 zope-interface=6.0=pypi_0
+
+flask~=2.2.3
+requests~=2.28.2

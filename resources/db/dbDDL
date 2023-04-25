@@ -1,0 +1,15 @@
+CREATE TABLE giftLog (
+    id                INTEGER     PRIMARY KEY AUTOINCREMENT,
+    UserNick          TEXT        NOT NULL,
+    UserHeadPic       TEXT        NOT NULL,
+    UserSex           TEXT (10),
+    UserDisplayId     TEXT (20)   NOT NULL,
+    UserId            INTEGER     NOT NULL,
+    Msg               TEXT (200),
+    GiftCount         INTEGER     DEFAULT (0),
+    GiftName          TEXT (20),
+    UserConsumeInRoom NUMERIC,
+    Type              INTEGER (4),
+    GiftLevel         INTEGER (4) DEFAULT (1),
+    tag               INTEGER (1) DEFAULT (0)
+);
